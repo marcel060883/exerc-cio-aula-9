@@ -12,7 +12,7 @@
 //     alert("Você é menor de idade.");
 // }   
 
-// 2. **Verificar se um número é positivo ou negativo:**
+// 2. **Verificar se um número é positi vo ou negativo:**
 //     - Peça ao usuário para inserir um número.
 //     - Use um `if-else` para verificar se o número é positivo, negativo.
 //     - OBS: *Por hora* considere o 0 como sendo um número negativo.

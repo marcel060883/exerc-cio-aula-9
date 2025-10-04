@@ -702,74 +702,286 @@
 // const maiusculos = produtos.map((element)=> {
 //   return element.toUpperCase();
 // })
+// // console.log(maiusculos);
+
+// const Lucas = {name: "Lucas", lastName: "Lacerda", age: 20};
+// const maria = {name: "Maria", lastName: "Oliveira", age: 17};
+// const joao = {name: "João", lastName: "Silva", age: 18};
+// const ana = {name: "Ana", lastName: "Santos", age: 22};
+
+// const people = [Lucas, maria, joao, ana]
+
+// //Filter A Peneira
+// //Cria um **novo array** com elementos que passam em um teste lógico 
+// //Callback deve retornar **true** ou **false**
+// //Retorna **novo array** (não altera o original)
+
+// const maiores = people.filter((value, index, array) => {
+//   console.log("Index:", index);
+//   console.log("Value", value.name);
+
+//   return value.age >= 18;
+// });
+
+// console.log("Resultado filter", maiores);
+
+// //Map - O transformador
+// //Cria um **novo array do mesmo tamanho**, transformando os elementos.
+// //Útil para extrair campos, modificar valores, gerar novos objetivos.
+// //Retorna um array novo (imutável).
+
+// const frases = people.map((value, index, array) =>{
+//   console.log("Index", index);
+//   console.log("Pessoa", value.name);
+//   console.log("Idade", value.age);
+
+//   return `${value.name} tem ${value.age} anos!`;
+// });
+// console.log("Resultado map:", frases)
+
+// //Find - O Buscador Único
+// //find retorna o primeiro elemento que satifaz a condição
+// //Se nenhum elemento atender retorna Undefined.
+// //Não altera o array original.
+
+// const mariaEncontrada = people.find((value, index, array) => {
+//   console.log("Index", index);
+//   console.log("Pessoa", value.name);
+
+//   return value.name === "Maria";
+// });
+
+// console.log("Resultado find", mariaEncontrada);
+
+// //Reduce - O Agregador
+// //O `reduce` **"reduz" um array inteiro a um único valor**. Ele percorre cada elemento
+// //do array e vai acumulando um resultado com base na função que você.
+// //´reduce´ reduz o array inteiro a **um único valor**.
+// //Esse valor pode ser: número, string, objeto, array etc.
+// //Muito poderoso para somas, agrupamentos e estatísticas.
+
+// // array.reduce ((acc, elementoAtual, indice, arrayOriginal) => {
+// //   return novoAcumulador;
+// // }0); O 0 é o valor inical
+
+// const somaIdades = people.reduce((acc, value, index, array) => {
+//   console.log("Index", index);
+//   console.log("Pessoa", value.name, value.age);
+//   console.log("Acumulador antes:", acc)
+
+//   return acc +value.age;
+// }, 0);
+
+// console.log("Resultado da soma das idades", somaIdades);
+
+//Ex 1 - Filter (fácil)
+//Dado const arr = [10,15,20,25,30], use filter para obter números maiores ou iguais a 20.
+
+// const num = [10,15,20,25,30]
+// const ma20 = num.filter(n => n >=20)
+// console.log(ma20);
+
+//Ex 2 - Map (fácil)
+//Dado const palavras = ["js", "html"]`, `map` para capitalizar (`"JS", `"HTML"`).
+
+// const palavras = ["js", "html"]
+// const maiusculos = palavras.map((palavras) => {
+// return palavras.toUpperCase();
+// })
+
 // console.log(maiusculos);
 
-const Lucas = {name: "Lucas", lastName: "Lacerda", age: 20};
-const maria = {name: "Maria", lastName: "Oliveira", age: 17};
-const joao = {name: "João", lastName: "Silva", age: 18};
-const ana = {name: "Ana", lastName: "Santos", age: 22};
+//Ex 3 - Find (Médio)
+//Dado um array de objetos usuarios, encontre o usuário com id ===3.
 
-const people = [Lucas, maria, joao, ana]
+// const usuario=[
+//   { id: 1, nome: "A"},
+//   { id: 2, nome: "B"},
+//   { id: 3, nome: "C"},
+// ]
 
-//Filter A Peneira
-//Cria um **novo array** com elementos que passam em um teste lógico 
-//Callback deve retornar **true** ou **false**
-//Retorna **novo array** (não altera o original)
+// const u = usuario.find((u => u.id === 3));
+// console.log(u);
 
-const maiores = people.filter((value, index, array) => {
-  console.log("Index:", index);
-  console.log("Value", value.name);
+//Ex 4 - Map + Filter (médio)
 
-  return value.age >= 18;
-});
+// Enunciado: Dado produtos com {nome, preço, crie um array com nomes dos producos com
+//preço > 20.}
 
-console.log("Resultado filter", maiores);
+// const produtos = [
+//   { nome: "X", preco: 10 },
+//   { nome: "Y", preco: 30 },
+// ];
 
-//Map - O transformador
-//Cria um **novo array do mesmo tamanho**, transformando os elementos.
-//Útil para extrair campos, modificar valores, gerar novos objetivos.
-//Retorna um array novo (imutável).
+// //forma 1
+// const nomes = produtos.filter(n => n.preco > 20).map(n => n.nome);
 
-const frases = people.map((value, index, array) =>{
-  console.log("Index", index);
-  console.log("Pessoa", value.name);
-  console.log("Idade", value.age);
+// //forma 2
+// const nomes = produtos.filter((p) => {
+//   return p.preco > 20;
+// })
+// .map((p) => {
+//   return p.nome;
+// })
+// console.log(nomes);
 
-  return `${value.name} tem ${value.age} anos!`;
-});
-console.log("Resultado map:", frases)
 
-//Find - O Buscador Único
-//find retorna o primeiro elemento que satifaz a condição
-//Se nenhum elemento atender retorna Undefined.
-//Não altera o array original.
+// Exercícios de Map – JavaScript
+// Básicos
+// 1. Adicione um sufixo às palavras
+// Dado um array de palavras, use map para adicionar o sufixo &quot;!!!&quot; a cada
+// uma.
+// const words = [ "marmota" , "calabreso", "arara"];
+// const sufixo = words.map(words => words + "!!!");
+// console.log(sufixo);
 
-const mariaEncontrada = people.find((value, index, array) => {
-  console.log("Index", index);
-  console.log("Pessoa", value.name);
 
-  return value.name === "Maria";
-});
+// 2. Adicione o prefixo “Colaborador: “ às palavras
+// Dado um array de nomes, use map para adicionar o prefixo
+// &quot;Colaborador: &quot; antes de cada nome.
+// const words = [ "marmota" , "calabreso", "arara"];
+// const prefixo = words.map(words => "Colaborador:" + words);
+// console.log(prefixo);
 
-console.log("Resultado find", mariaEncontrada);
 
-//Reduce - O Agregador
-//O `reduce` **"reduz" um array inteiro a um único valor**. Ele percorre cada elemento
-//do array e vai acumulando um resultado com base na função que você.
-//´reduce´ reduz o array inteiro a **um único valor**.
-//Esse valor pode ser: número, string, objeto, array etc.
-//Muito poderoso para somas, agrupamentos e estatísticas.
+// Intermediários (Aplicações Práticas)
+// 3. Extraindo nomes de objetos
+// Dado um array de objetos representando pessoas, crie um novo array
+// contendo apenas os nomes.
+// const pessoas = [
+//   { nome: "ZeDaManga" , idade: 102},
+//   { nome: "Calabreso" , idade:42},
+//   { nome: "Amazonas" , idade: 25}
+// ];
 
-// array.reduce ((acc, elementoAtual, indice, arrayOriginal) => {
-//   return novoAcumulador;
-// }0); O 0 é o valor inical
+// const nomes = pessoas.map (pessoas => pessoas.nome);
 
-const somaIdades = people.reduce((acc, value, index, array) => {
-  console.log("Index", index);
-  console.log("Pessoa", value.name, value.age);
-  console.log("Acumulador antes:", acc)
+// console.log(nomes);
 
-  return acc +value.age;
-}, 0);
 
-console.log("Resultado da soma das idades", somaIdades);
+
+// 4. Calculando áreas de círculos
+// Você tem um array de raios e precisa calcular as áreas dos círculos
+// correspondentes.
+// Fórmula: Área = π * r²
+
+// const raios = [5, 4, 3];
+
+// const formula = raios.map(raios => {
+//   return Math.PI * Math.pow(raios, 2);
+// });
+
+// console.log("Área do circulo:", formula);
+
+
+// 5. Formatando preços
+// Você tem um array de preços em reais e deseja formatá-los como string
+// no formato R$ xx,xx.
+
+// const precos = [10, 5.5, 3.99, 100.1];
+
+// const precosFormatados = precos.map(preco =>
+//   preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+// );
+
+// console.log(precosFormatados);
+
+
+
+// Avançados (Desafios Mais Complexos)
+// 6. Transformando notas escolares
+// Dado um array de notas de alunos (0 a 100), converta cada nota em um
+// conceito (A, B, C, D, F).
+
+// const notas = Array.from({ length: 100 }, () => +(Math.random() * 100).toFixed(2));
+
+// const conceitos = notas.map(nota => {
+//   if (nota <= 25) return 'F';
+//   else if (nota <= 50) return 'D';
+//   else if (nota <= 75) return 'C'; 
+//   else if (nota <= 90) return 'B';
+//   else return 'A';
+// });
+
+// console.log('Notas:', notas);
+// console.log('Conceitos:', conceitos);
+
+// 7 Gerando slugs para URLs
+// Você tem um array de títulos de artigos e quer convertê-los em slugs
+// para URLs:
+//  Tudo em minúsculo
+//  Espaços substituídos por -
+
+
+
+
+// 8. Transformando array de objetos
+// Você tem um array de produtos e deseja retornar um novo array
+// contendo apenas:
+//  O nome do produto
+//  O preço formatado no padrão brasileiro (R$ xx,xx)
+
+const produtos = [
+  { produto: "Banana", preco: 2.50 },
+  { produto: "Calabresa", preco: 17.99 },
+  { produto: "Gelatina", preco: 1.22 }
+];
+
+const mercadoria = produtos.map(item => item.produto);
+
+const precosFormatados = produtos.map(item =>
+  item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+);
+
+console.log("Mercadoria:", mercadoria);
+console.log("Preços formatados:", precosFormatados);
+
+
+
+
+// Exercícios de Filter – JavaScript
+// Básicos
+// 1. Crie um programa que filtre todos os números maiores que 10 em um
+// array.
+// 2. Crie um programa que filtre todos os nomes que começam com a letra
+// &quot;A&quot; em um array de nomes.
+
+// Intermediários
+// 3. Crie um programa que filtre todos os produtos com preço menor que
+// R$ 50 em uma lista de produtos.
+// 4. Crie um programa que filtre todas as pessoas com idade maior ou
+// igual a 18 anos em uma lista de pessoas.
+// 5. Crie um programa que filtre todas as palavras com mais de 5 letras em
+// um array de palavras.
+
+// Avançados
+// 6. Crie um programa que filtre todos os usuários ativos (ativo = true) em
+// uma lista de usuários.
+// 7. Crie um programa que filtre todos os pedidos com status &quot;entregue&quot;
+// em uma lista de pedidos.
+// 8. Crie um programa que filtre todos os alunos aprovados (nota maior ou
+// igual a 7) em uma lista de alunos.
+
+// Exercícios de Find – JavaScript
+// Básicos
+// 1. Crie um programa que busque o nome &quot;Amanda&quot; em um array de
+// nomes.
+// 2. Crie um programa que busque o usuário com ID igual a 2 em uma lista
+// de usuários.
+
+// Intermediários
+
+// 3. Crie um programa que busque o produto com nome &quot;Fone de ouvido&quot;
+// em uma lista de produtos.
+// 4. Crie um programa que encontre a primeira pessoa com idade maior
+// ou igual a 18 anos em uma lista de pessoas.
+// 5. Crie um programa que identifique a primeira palavra com mais de 5
+// letras em um array de palavras.
+
+// Avançados
+// 6. Crie um programa que selecione o primeiro usuário ativo (ativo = true)
+// em uma lista de usuários.
+// 7. Crie um programa que procure o primeiro pedido com status
+// &quot;entregue&quot; em uma lista de pedidos.
+// 8. Crie um programa que encontre o primeiro aluno aprovado (nota
+// maior ou igual a 7) em uma lista de alunos.

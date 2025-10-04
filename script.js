@@ -565,22 +565,22 @@
 //     - Peça ao usuário um número inteiro positivo.
 //     - Use um `while` para somar seus dígitos.
 
-const numero = Number(prompt("Digite um número inteiro positivo para somar seus dígitos"));
+// const numero = Number(prompt("Digite um número inteiro positivo para somar seus dígitos"));
 
-if (Number.isNaN(numero) || !Number.isInteger(numero) || numero < 0) {
-  alert("Entrada inválida. Por favor, insira um número inteiro positivo.");
-} else {
-  let soma = 0;
-  let n = numero;
+// if (Number.isNaN(numero) || !Number.isInteger(numero) || numero < 0) {
+//   alert("Entrada inválida. Por favor, insira um número inteiro positivo.");
+// } else {
+//   let soma = 0;
+//   let n = numero;
 
-  while (n > 0) {
-    soma += n % 10;     // pega o último dígito
-    n = Math.floor(n / 10); // remove o último dígito
-  }
+  // while (n > 0) {
+  //   soma += n % 10;     // pega o último dígito
+  //   n = Math.floor(n / 10); // remove o último dígito
+  // }
 
-  alert(`A soma dos dígitos de ${numero} é ${soma}`);
-  console.log(`A soma dos dígitos de ${numero} é ${soma}`);
-}
+//   alert(`A soma dos dígitos de ${numero} é ${soma}`);
+//   console.log(`A soma dos dígitos de ${numero} é ${soma}`);
+// }
 
 
 
@@ -611,6 +611,25 @@ if (Number.isNaN(numero) || !Number.isInteger(numero) || numero < 0) {
 // 3. **Inverter um número:**
 //     - Peça um número ao usuário.
 //     - Use um `while` para inverter seus dígitos (exemplo: `123` → `321`).
+
+// Solicita um número ao usuário
+// let numero = prompt("Digite um número para inverter:");
+
+// Converte para número inteiro
+// numero = parseInt(numero);
+
+// Variáveis para armazenar o número invertido
+// let invertido = 0;
+
+// Loop para inverter os dígitos
+// while (numero !== 0) {
+//   let digito = numero % 10;       // Pega o último dígito
+//   invertido = invertido * 10 + digito; // Adiciona ao número invertido
+//   numero = Math.floor(numero / 10);    // Remove o último dígito
+// }
+
+// Exibe o resultado
+// alert("Número invertido: " + invertido);
 
 
 
@@ -665,3 +684,92 @@ if (Number.isNaN(numero) || !Number.isInteger(numero) || numero < 0) {
 
 //Descobrir o maior número entre três valores digitados pelo usuário
 //console.log("Maior número", Math.max(n1, n2,n3))
+
+//Função Callback
+
+// const alunos = ["Ana", "Bruno", "Carla"];
+
+// const listaNumerada2 = alunos.map((nome, index) => {
+//   return `${index + 1} - ${nome}`
+// });
+
+// console.log(listaNumerada);
+
+// const listaNumerada = alunos.map((nome, index) => `${index + 1} - ${nome}`);
+
+// const produtos = ["lápis", "caneta", "caderno"];
+
+// const maiusculos = produtos.map((element)=> {
+//   return element.toUpperCase();
+// })
+// console.log(maiusculos);
+
+const Lucas = {name: "Lucas", lastName: "Lacerda", age: 20};
+const maria = {name: "Maria", lastName: "Oliveira", age: 17};
+const joao = {name: "João", lastName: "Silva", age: 18};
+const ana = {name: "Ana", lastName: "Santos", age: 22};
+
+const people = [Lucas, maria, joao, ana]
+
+//Filter A Peneira
+//Cria um **novo array** com elementos que passam em um teste lógico 
+//Callback deve retornar **true** ou **false**
+//Retorna **novo array** (não altera o original)
+
+const maiores = people.filter((value, index, array) => {
+  console.log("Index:", index);
+  console.log("Value", value.name);
+
+  return value.age >= 18;
+});
+
+console.log("Resultado filter", maiores);
+
+//Map - O transformador
+//Cria um **novo array do mesmo tamanho**, transformando os elementos.
+//Útil para extrair campos, modificar valores, gerar novos objetivos.
+//Retorna um array novo (imutável).
+
+const frases = people.map((value, index, array) =>{
+  console.log("Index", index);
+  console.log("Pessoa", value.name);
+  console.log("Idade", value.age);
+
+  return `${value.name} tem ${value.age} anos!`;
+});
+console.log("Resultado map:", frases)
+
+//Find - O Buscador Único
+//find retorna o primeiro elemento que satifaz a condição
+//Se nenhum elemento atender retorna Undefined.
+//Não altera o array original.
+
+const mariaEncontrada = people.find((value, index, array) => {
+  console.log("Index", index);
+  console.log("Pessoa", value.name);
+
+  return value.name === "Maria";
+});
+
+console.log("Resultado find", mariaEncontrada);
+
+//Reduce - O Agregador
+//O `reduce` **"reduz" um array inteiro a um único valor**. Ele percorre cada elemento
+//do array e vai acumulando um resultado com base na função que você.
+//´reduce´ reduz o array inteiro a **um único valor**.
+//Esse valor pode ser: número, string, objeto, array etc.
+//Muito poderoso para somas, agrupamentos e estatísticas.
+
+// array.reduce ((acc, elementoAtual, indice, arrayOriginal) => {
+//   return novoAcumulador;
+// }0); O 0 é o valor inical
+
+const somaIdades = people.reduce((acc, value, index, array) => {
+  console.log("Index", index);
+  console.log("Pessoa", value.name, value.age);
+  console.log("Acumulador antes:", acc)
+
+  return acc +value.age;
+}, 0);
+
+console.log("Resultado da soma das idades", somaIdades);

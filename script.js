@@ -933,8 +933,7 @@ const precosFormatados = produtos.map(item =>
   item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 );
 
-console.log("Mercadoria:", mercadoria);
-console.log("Preços formatados:", precosFormatados);
+console.log("Mercadoria:", mercadoria, "Custa:", precosFormatados);
 
 
 

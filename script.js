@@ -912,6 +912,19 @@
 //  Tudo em minúsculo
 //  Espaços substituídos por -
 
+// Array com os títulos dos artigos
+// const conversao = [
+//   "Como aprender JavaScript do Zero",
+//   "O Guia Definitivo de CSS",
+//   "Introdução ao React Hooks",
+//   "Dez Dicas para um Código Limpo"
+// ];
+
+// const transformador = conversao.map(title => {
+//   return title.toLowerCase().replaceAll(' ', '-');
+// });
+// console.log("Títulos Originais:", conversao);
+// console.log("Slugs para URL:", transformador);
 
 
 
@@ -921,19 +934,19 @@
 //  O nome do produto
 //  O preço formatado no padrão brasileiro (R$ xx,xx)
 
-const produtos = [
-  { produto: "Banana", preco: 2.50 },
-  { produto: "Calabresa", preco: 17.99 },
-  { produto: "Gelatina", preco: 1.22 }
-];
+// const produtos = [
+//   { produto: "Banana", preco: 2.50 },
+//   { produto: "Calabresa", preco: 17.99 },
+//   { produto: "Gelatina", preco: 1.22 }
+// ];
 
-const mercadoria = produtos.map(item => item.produto);
+// const mercadoria = produtos.map(item => item.produto);
 
-const precosFormatados = produtos.map(item =>
-  item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-);
+// const precosFormatados = produtos.map(item =>
+//   item.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+// );
 
-console.log("Mercadoria:", mercadoria, "Custa:", precosFormatados);
+// console.log("Mercadoria:", mercadoria, "Custa:", precosFormatados);
 
 
 
@@ -942,45 +955,177 @@ console.log("Mercadoria:", mercadoria, "Custa:", precosFormatados);
 // Básicos
 // 1. Crie um programa que filtre todos os números maiores que 10 em um
 // array.
+
+// const num = [1, 5, 15, 20, 25, 30];
+// const filtro = num.filter(n => n >= 10)
+// console.log(filtro);
+
 // 2. Crie um programa que filtre todos os nomes que começam com a letra
 // &quot;A&quot; em um array de nomes.
+
+// const nomes = ["Thiago", "Jo", "Rodrigo", "Tião", "Zé"]
+// const selecao = nomes.filter(nome => {
+//   return nome.startsWith('T');
+//    })
+// console.log("Nomes que começam com T", selecao);
 
 // Intermediários
 // 3. Crie um programa que filtre todos os produtos com preço menor que
 // R$ 50 em uma lista de produtos.
+
+// const produtos = [
+//   { nome: "Mouse com Fio", preco: 25.50 },
+//   { nome: "Teclado Básico", preco: 49.90 },
+//   { nome: "Fone de Ouvido", preco: 35.00 },
+//   { nome: "Pen Drive 32GB", preco: 45.00 },
+//   { nome: "Cabo HDMI 2m", preco: 29.99 },
+//   { nome: "Mousepad Gamer", preco: 15.75 },
+//   { nome: "Hub USB 4 Portas", preco: 60.00 },
+//   { nome: "Webcam HD", preco: 95.50 },
+//   { nome: "Filtro de Linha", preco: 39.90 },
+//   { nome: "Caixa de Som USB", preco: 78.20 }
+// ];
+
+// const preco = produtos.filter(p => p.preco <= 50)
+// console.log(preco);
+
+
 // 4. Crie um programa que filtre todas as pessoas com idade maior ou
 // igual a 18 anos em uma lista de pessoas.
+
+// const pessoas = [
+//   { nome: "Ana", idade: 28 },
+//   { nome: "Bruno", idade: 17 },
+//   { nome: "Carla", idade: 35 },
+//   { nome: "Daniel", idade: 22 },
+//   { nome: "Elisa", idade: 41 }
+// ];
+
+// const maiores = pessoas.filter(p => p.idade >= 18)
+// console.log(maiores);
+
+
 // 5. Crie um programa que filtre todas as palavras com mais de 5 letras em
 // um array de palavras.
+
+// const pessoas = [
+//   { nome: "Ana" },
+//   { nome: "Bruno" },
+//   { nome: "Carla" },
+//   { nome: "Daniel"},
+//   { nome: "Elisa"}
+// ];
+
+// const palavras = pessoas.filter(p => p.nome.length > 5)
+// console.log(palavras);
+
+
 
 // Avançados
 // 6. Crie um programa que filtre todos os usuários ativos (ativo = true) em
 // uma lista de usuários.
+// const usuarios = [
+//   { nome: "Ana", id: 1, ativo: true },
+//   { nome: "Bruno", id: 2, ativo: false },
+//   { nome: "Carla", id: 3, ativo: true },
+//   { nome: "Daniel", id: 4, ativo: true },
+//   { nome: "Elisa", id: 5, ativo: false },
+//   { nome: "Felipe", id: 6, ativo: true },
+//   { nome: "Gabriela", id: 7, ativo: false },
+//   { nome: "Heitor", id: 8, ativo: true },
+//   { nome: "Isabela", id: 9, ativo: false },
+//   { nome: "João", id: 10, ativo: true }
+// ];
+// const usuariosAtivos = usuarios.filter(usuario => usuario.ativo === true);
+// console.log("Usuários Ativos:", usuariosAtivos);
+
+
 // 7. Crie um programa que filtre todos os pedidos com status &quot;entregue&quot;
 // em uma lista de pedidos.
+
+
+
 // 8. Crie um programa que filtre todos os alunos aprovados (nota maior ou
 // igual a 7) em uma lista de alunos.
+
+// const alunos = [
+//   { nome: "Ana", nota: 9.5 },
+//   { nome: "Bruno", nota: 6.8 },
+//   { nome: "Carla", nota: 7.0 },
+//   { nome: "Daniel", nota: 8.2 },
+//   { nome: "Elisa", nota: 4.5 },
+//   { nome: "Felipe", nota: 10.0 },
+//   { nome: "Gabriela", nota: 5.9 },
+//   { nome: "Heitor", nota: 7.5 },
+//   { nome: "Isabela", nota: 8.8 },
+//   { nome: "João", nota: 6.0 }
+// ];
+
+// const aprovados = alunos.filter(p => p.nota >= 7)
+// console.log(aprovados);
 
 // Exercícios de Find – JavaScript
 // Básicos
 // 1. Crie um programa que busque o nome &quot;Amanda&quot; em um array de
 // nomes.
+// const nomes = [
+//   { id: 1, nome: "Ana" },
+//   { id: 2, nome: "Bruno" },
+//   { id: 3, nome: "Carla" },
+//   { id: 4, nome: "Daniel" },
+//   { id: 5, nome: "Elisa" }
+// ];
+// const nomeEncontrado = nomes.find(n => n.nome === "Ana");
+// console.log(nomeEncontrado);
+
+
+
 // 2. Crie um programa que busque o usuário com ID igual a 2 em uma lista
 // de usuários.
+// const usuarios = [
+//   { id: 1, nome: "Ana" },
+//   { id: 2, nome: "Bruno" },
+//   { id: 3, nome: "Carla" },
+//   { id: 4, nome: "Daniel" },
+//   { id: 5, nome: "Elisa" }
+// ];
+// const usuario = usuarios.find(u => u.id === 2)
+// console.log(usuario);
+
 
 // Intermediários
 
 // 3. Crie um programa que busque o produto com nome &quot;Fone de ouvido&quot;
 // em uma lista de produtos.
+
+
+
+
 // 4. Crie um programa que encontre a primeira pessoa com idade maior
 // ou igual a 18 anos em uma lista de pessoas.
+
+
+
+
 // 5. Crie um programa que identifique a primeira palavra com mais de 5
 // letras em um array de palavras.
+
+
+
+
 
 // Avançados
 // 6. Crie um programa que selecione o primeiro usuário ativo (ativo = true)
 // em uma lista de usuários.
+
+
+
+
 // 7. Crie um programa que procure o primeiro pedido com status
 // &quot;entregue&quot; em uma lista de pedidos.
+
+
+
+
 // 8. Crie um programa que encontre o primeiro aluno aprovado (nota
 // maior ou igual a 7) em uma lista de alunos.
